@@ -1,2 +1,2 @@
 # gobservable_test
-tests and examples for observability
+Simples Go API Boilerplate with basic configuration
