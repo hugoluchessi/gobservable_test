@@ -10,10 +10,10 @@ import (
 )
 
 func HandleSomeDomainGetSomething(ms *config.MonitorServices, rw http.ResponseWriter, req *http.Request) {
-	sleepTime := rand.Uint32() % 1500
+	sleepTime := rand.Uint32() % 700
 	time.Sleep(time.Duration(sleepTime) * time.Millisecond)
 
-	if sleepTime > 1000 {
+	if sleepTime > 500 {
 		ms.IncrCounter([]string{"req", "slow"}, 1)
 	}
 

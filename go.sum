@@ -5,10 +5,8 @@ github.com/golang/protobuf v1.2.0 h1:P3YflyNX/ehuJFLhxviNdFxQPkGK5cDcApsge1SqnvM
 github.com/golang/protobuf v1.2.0/go.mod h1:6lQm79b+lXiMfvg/cZm0SGofjICqVBUtrP5yJMmIC1U=
 github.com/hugoluchessi/badger v1.0.1 h1:hxOSz4zGs9rzzDSlIF74RkMN8tlRCuzCivFMS68r9Nw=
 github.com/hugoluchessi/badger v1.0.1/go.mod h1:jV3X5Kzg0goMiti11hnTDQfsvAw3Y4Zp6wnXZBDjPcI=
-github.com/hugoluchessi/go-metrics v0.0.6-rev1 h1:V4/GJwZc/uR3zxtZDxOlDckIk2D1bm9eTHRaq+Nxjjo=
-github.com/hugoluchessi/go-metrics v0.0.6-rev1/go.mod h1:ASOMrypo7xH8aQSnTl2tmz23ZY/RSey73OBdJ/PO+7U=
-github.com/hugoluchessi/go-metrics v0.0.6 h1:VCaoXwiGtagx7LlKE76IawHDv389yP4c5L+19WS+pjU=
-github.com/hugoluchessi/go-metrics v0.0.6/go.mod h1:ASOMrypo7xH8aQSnTl2tmz23ZY/RSey73OBdJ/PO+7U=
+github.com/hugoluchessi/go-metrics v0.0.7 h1:a2li8DsbCp1BSZxo/nLNndKNBVNTtKUFgfoSe6WroW0=
+github.com/hugoluchessi/go-metrics v0.0.7/go.mod h1:ASOMrypo7xH8aQSnTl2tmz23ZY/RSey73OBdJ/PO+7U=
 github.com/julienschmidt/httprouter v1.2.0 h1:TDTW5Yz1mjftljbcKqRcrYhd4XeOoI98t+9HbQbYf7g=
 github.com/julienschmidt/httprouter v1.2.0/go.mod h1:SYymIcj16QtmaHHD7aYtjjsJG7VTCxuUUipMqKk8s4w=
 github.com/matttproud/golang_protobuf_extensions v1.0.1 h1:4hp9jkHxhMHkqkrB3Ix0jegS5sx/RkqARlsWZ6pIwiU=
