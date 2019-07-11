@@ -1,8 +1,8 @@
 package config
 
 import (
-	m "github.com/hugoluchessi/go-metrics"
-	prom "github.com/hugoluchessi/go-metrics/providers/prometheus"
+	m "github.com/hugoluchessi/gobservable/metrics"
+	prom "github.com/hugoluchessi/gobservable/metrics/providers/prometheus"
 )
 
 type MonitorServices struct {

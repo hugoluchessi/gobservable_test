@@ -5,7 +5,7 @@ import (
 	"time"
 
 	"github.com/hugoluchessi/badger"
-	prom "github.com/hugoluchessi/go-metrics/providers/prometheus"
+	prom "github.com/hugoluchessi/gobservable/metrics/providers/prometheus"
 	"github.com/hugoluchessi/gobservable_test/config"
 	"github.com/hugoluchessi/gobservable_test/controllers"
 )
