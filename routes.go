@@ -8,6 +8,8 @@ import (
 	prom "github.com/hugoluchessi/gobservable/metrics/providers/prometheus"
 	"github.com/hugoluchessi/gobservable_test/config"
 	"github.com/hugoluchessi/gobservable_test/controllers"
+
+	log "github.com/hugoluchessi/gobservable/logging"
 )
 
 func ConfigureRoutes(ms *config.MonitorServices) *badger.Mux {
@@ -33,6 +35,10 @@ func ConfigureRoutes(ms *config.MonitorServices) *badger.Mux {
 			ms.MetricService.MeasureSince([]string{"req", "t"}, start)
 		})
 	})
+
+	loggerMw := log.NewContextLoggerMiddleware(ms.ContextLogger)
+
+	mainRouter.Use(loggerMw.Handler)
 
 	mainRouter.Get("", http.HandlerFunc(healthCheckHandler))
 
