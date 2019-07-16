@@ -4,5 +4,5 @@ go 1.12
 
 require (
 	github.com/hugoluchessi/badger v1.0.1
-	github.com/hugoluchessi/gobservable v0.0.6
+	github.com/hugoluchessi/gobservable v0.0.7
 )

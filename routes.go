@@ -2,9 +2,9 @@ package main
 
 import (
 	"net/http"
-	"time"
 
 	"github.com/hugoluchessi/badger"
+	"github.com/hugoluchessi/gobservable/metrics"
 	prom "github.com/hugoluchessi/gobservable/metrics/providers/prometheus"
 	"github.com/hugoluchessi/gobservable_test/config"
 	"github.com/hugoluchessi/gobservable_test/controllers"
@@ -19,22 +19,11 @@ func ConfigureRoutes(ms *config.MonitorServices) *badger.Mux {
 	// Create new router group
 	mainRouter := mux.AddRouter("/")
 
-	// Metrics middleware idea #1
-	mainRouter.Use(func(h http.Handler) http.Handler {
-		return http.HandlerFunc(func(res http.ResponseWriter, req *http.Request) {
-			ms.MetricService.IncrCounter([]string{"req", "c"}, 1)
-			h.ServeHTTP(res, req)
-		})
-	})
+	reqCountMw := metrics.NewRequestCountMiddleware(ms.MetricService)
+	reqTimeMw := metrics.NewRequestTimeMiddleware(ms.MetricService)
 
-	// Metrics middleware idea #2
-	mainRouter.Use(func(h http.Handler) http.Handler {
-		return http.HandlerFunc(func(res http.ResponseWriter, req *http.Request) {
-			start := time.Now()
-			h.ServeHTTP(res, req)
-			ms.MetricService.MeasureSince([]string{"req", "t"}, start)
-		})
-	})
+	mainRouter.Use(reqCountMw.Handler)
+	mainRouter.Use(reqTimeMw.Handler)
 
 	loggerMw := log.NewContextLoggerMiddleware(ms.ContextLogger)
 
